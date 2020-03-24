@@ -61,7 +61,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         btnlogin.setOnClickListener(this);
 
         if(ParseUser.getCurrentUser()!=null){
-            ParseUser.getCurrentUser().logOut();
+            //ParseUser.getCurrentUser().logOut();
+            transitiontoSocialMediaActivity();
         }
 
 
@@ -75,6 +76,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
                 if(edtenteremail.getText().toString().equals("")|| edtusername.getText().toString().equals("")|| edtpassword.getText().toString().equals("")){
                     FancyToast.makeText(SignUp.this,"Email,  Username , Password is required" ,FancyToast.LENGTH_LONG,FancyToast.INFO,true).show();
+
                 }
                 else {
                     final ParseUser appuser = new ParseUser();
@@ -93,6 +95,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                             if (e == null) {
 
                                 FancyToast.makeText(SignUp.this, appuser.getUsername() + " is signed up successfully", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                                transitiontoSocialMediaActivity();
                             } else {
 
                                 FancyToast.makeText(SignUp.this, e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
@@ -128,6 +131,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
 
 
+    }
+
+    public void transitiontoSocialMediaActivity(){
+        Intent intent=new Intent(SignUp.this,SocialMediaActivity.class);
+        startActivity(intent);
     }
 }
 
