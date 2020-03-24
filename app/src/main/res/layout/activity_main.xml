@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DAFF5722"
+    android:onClick="rootelementisclicked"
     tools:context=".SignUp">
 
     <EditText
