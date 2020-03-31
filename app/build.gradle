@@ -25,6 +25,7 @@ android {
 
 dependencies {
 
+    implementation 'com.github.mjn1369:prettydialog:1.0.4'
     implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.6'
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.23.1"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
